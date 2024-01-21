@@ -5,10 +5,12 @@ import { composeWithDevTools } from "@redux-devtools/extension";
 
 import accountReducer from "./features/account/accountSlice";
 import customerReducer from "./features/customers/customerSlice";
+import authReducer from "./features/userAuth/authSlice";
 
 const rootReducer = combineReducers({
   account: accountReducer,
   customer: customerReducer,
+  auth: authReducer,
 });
 
 const store = createStore(
