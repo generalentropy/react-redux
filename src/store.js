@@ -8,6 +8,7 @@ const store = configureStore({
   reducer: {
     account: accountReducer,
     customer: customerReducer,
+    auth: authReducer,
   },
 });
 
