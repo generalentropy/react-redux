@@ -6,7 +6,7 @@ function AccountOperations() {
   const [depositAmount, setDepositAmount] = useState("");
   const [withdrawalAmount, setWithdrawalAmount] = useState("");
   const [loanAmount, setLoanAmount] = useState("");
-  const [loanPurpose, setLoanPurpose] = useState("");
+  const [loanPurposeInput, setLoanPurposeInput] = useState("");
   const [currency, setCurrency] = useState("USD");
 
   const dispatch = useDispatch();
@@ -35,11 +35,11 @@ function AccountOperations() {
   }
 
   function handleRequestLoan() {
-    if (!loanAmount || !loanPurpose) return;
+    if (!loanAmount || !loanPurposeInput) return;
 
-    dispatch(requestLoan(loanAmount, loanPurpose));
+    dispatch(requestLoan(loanAmount, loanPurposeInput));
     setLoanAmount("");
-    setLoanPurpose("");
+    setLoanPurposeInput("");
   }
 
   function handlePayLoan() {
@@ -94,8 +94,8 @@ function AccountOperations() {
             placeholder="Loan amount"
           />
           <input
-            value={loanPurpose}
-            onChange={(e) => setLoanPurpose(e.target.value)}
+            value={loanPurposeInput}
+            onChange={(e) => setLoanPurposeInput(e.target.value)}
             placeholder="Loan purpose"
           />
           <button onClick={handleRequestLoan}>Request loan</button>
